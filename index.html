@@ -528,8 +528,38 @@
             color: #999;
         }
         
-        /* Responsive Styles */
-        @media (max-width: 768px) {
+        /* Back To Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
             .header-content {
                 flex-direction: column;
                 text-align: center;
@@ -565,7 +595,7 @@
                 height: 300px;
                 order: -1;
             }
-        }
+        
         
         /* Aburame Clan Theme Elements */
         .bugs-container {
@@ -870,8 +900,10 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
+    <!-- Back To Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        &#8593;
+    </a>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
@@ -957,6 +989,27 @@
             
             bugsContainer.appendChild(bug);
         }
+        
+        // Back to top button functionality
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        // Smooth scroll to top when button is clicked
+        backToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     </script>
 </body>
 </html>
