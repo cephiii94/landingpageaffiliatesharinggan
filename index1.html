@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharingan.id - Klan Aburame Premium Extension</title>
+    <style>
+        :root {
+            --primary-color: #f0f8f1;
+            --secondary-color: #4d7553;
+            --accent-color: #317a39;
+            --text-color: #333333;
+            --bg-dark: #e8f3e9;
+            --bg-light: #f5f9f5;
+            --card-bg: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-color);
+            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+        
+        .logo-symbol {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/svgs/solid/spider.svg');
+            background-size: 200px;
+            background-repeat: repeat;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(232, 243, 233, 0.7);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-shadow: 0 2px 4px var(--shadow-color);
+            font-weight: 800;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #444;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px var(--shadow-color);
+        }
+        
+        .cta-btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px var(--shadow-color);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 60px;
+            color: var(--accent-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 15px auto 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-category {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            transition: transform 0.3s;
+        }
+        
+        .feature-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-align: center;
+        }
+        
+        .feature-list {
+            list-style-type: none;
+        }
+        
+        .feature-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .feature-list li::before {
+            content: '🐞'; /* Bug emoji for Aburame clan theme */
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background-color: var(--bg-dark);
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .pricing-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px var(--shadow-color);
+        }
+        
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--secondary-color);
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        
+        .pricing-card .duration {
+            display: block;
+            font-size: 1rem;
+            color: #999;
+            margin-top: 5px;
+        }
+        
+        .pricing-card ul {
+            list-style-type: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .pricing-card ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .pricing-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        .pricing-card .buy-btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .pricing-card .buy-btn:hover {
+            background-color: var(--accent-color);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .about-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px var(--shadow-color);
+            height: 400px;
+            background-color: var(--card-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            color: var(--accent-color);
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--bg-dark);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial-text::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -30px;
+            left: -10px;
+            color: var(--secondary-color);
+            opacity: 0.5;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 3px;
+        }
+        
+        .author-info p {
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+        
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background-color: var(--card-bg);
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .faq-question:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .faq-answer {
+            background-color: var(--card-bg);
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--accent-color);
+            padding: 60px 0 30px;
+            color: white;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .footer-column ul {
+            list-style-type: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #e0e0e0;
+            text-decoration: underline;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--bg-light);
+            border-radius: 50%;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+        
+        /* Back To Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                height: 300px;
+                order: -1;
+            }
+        
+        
+        /* Aburame Clan Theme Elements */
+        .bugs-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .bug {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: flyAround 30s linear infinite;
+            box-shadow: 0 0 5px rgba(49, 122, 57, 0.3);
+        }
+        
+        @keyframes flyAround {
+            0% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(100px, 50px);
+            }
+            50% {
+                transform: translate(50px, 100px);
+            }
+            75% {
+                transform: translate(-50px, 50px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Bugs Animation (Aburame Theme) -->
+    <div class="bugs-container">
+        <div class="bug" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
+        <div class="bug" style="top: 30%; left: 50%; animation-delay: 2s;"></div>
+        <div class="bug" style="top: 70%; left: 80%; animation-delay: 4s;"></div>
+        <div class="bug" style="top: 90%; left: 10%; animation-delay: 6s;"></div>
+        <div class="bug" style="top: 40%; left: 30%; animation-delay: 8s;"></div>
+        <div class="bug" style="top: 60%; left: 60%; animation-delay: 10s;"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-symbol">🐞</span>
+                <div class="logo-text" style="color: var(--accent-color);">Sharingan.id</div>
+            </div>
+            <button class="mobile-menu-btn" style="color: var(--accent-color);">☰</button>
+            <nav class="nav-links">
+                <a href="#features" style="color: var(--accent-color);">Fitur</a>
+                <a href="#pricing" style="color: var(--accent-color);">Paket</a>
+                <a href="#about" style="color: var(--accent-color);">Tentang</a>
+                <a href="#faq" style="color: var(--accent-color);">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>ABURAME CLAN EXTENSION</h1>
+            <p>Seperti jutsu serangga Klan Aburame, Sharingan Extension mengumpulkan dan memberikan akses ke ratusan layanan premium dalam satu ekstensi browser. Kendalikan dunia digital dengan kekuatan Sharingan.</p>
+            <a href="https://sharingan.id/?ref=ABURAME-8FX" class="cta-btn">DAPATKAN SEKARANG</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Fitur Premium</h2>
+            <div class="features-grid">
+                <div class="feature-category">
+                    <h3>AI Tools</h3>
+                    <ul class="feature-list">
+                        <li>ChatGPT</li>
+                        <li>Sora AI</li>
+                        <li>Claude</li>
+                        <li>Perplexity</li>
+                        <li>Clipto AI</li>
+                        <li>Kimi AI</li>
+                        <li>T3 AI</li>
+                        <li>YouCom AI</li>
+                        <li>DeepSeek</li>
+                        <li>Qwen AI</li>
+                    </ul>
+                </div>
+                <div class="feature-category">
+                    <h3>Media & Berita</h3>
+                    <ul class="feature-list">
+                        <li>Bloomberg</li>
+                        <li>Investing.com Pro</li>
+                        <li>NY Times</li>
+                        <li>The Economist</li>
+                        <li>Wall Street Journal</li>
+                        <li>Apple TV</li>
+                        <li>Apple Music</li>
+                        <li>Youtube Premium</li>
+                        <li>Disney+ Hotstar</li>
+                        <li>HBO Max</li>
+                    </ul>
+                </div>
+                <div class="feature-category">
+                    <h3>Produktivitas</h3>
+                    <ul class="feature-list">
+                        <li>Canva</li>
+                        <li>TurnitIn</li>
+                        <li>Grammarly</li>
+                        <li>Scribd</li>
+                        <li>Capcut</li>
+                        <li>ILoveIMG</li>
+                        <li>ILovePDF</li>
+                        <li>DeepL</li>
+                        <li>TradingView</li>
+                        <li>Medium</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Paket Klan Aburame</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Chunin</h3>
+                    <div class="price">
+                        <span style="text-decoration: line-through; color: #888; font-size: 1.5rem; margin-right: 10px;">Rp 60.000</span>
+                        <span style="font-weight: bold; font-style: italic; color: #f44336; display: inline-block; margin-left: 10px;">Best Plan</span>
+                        <div style="font-size: 2.5rem; font-weight: bold; margin-top: 5px;">Rp 45.000</div>
+                        <span class="duration">1 Bulan</span>
+                    </div>
+                    <ul>
+                        <li>Akses semua layanan premium</li>
+                        <li>Dukungan teknis</li>
+                        <li>Update regular</li>
+                        <li>Pemakaian 1 bulan</li>
+                    </ul>
+                    <a href="https://sharingan.id/?ref=ABURAME-8FX" class="buy-btn">Beli Sekarang</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Jounin</h3>
+                    <div class="price">
+                        <span style="text-decoration: line-through; color: #888; font-size: 1.5rem;">Rp 150.000</span>
+                        <div style="font-size: 2.5rem; font-weight: bold; margin-top: 5px;">Rp 130.000</div>
+                        <span class="duration">3 Bulan</span>
+                    </div>
+                    <ul>
+                        <li>Akses semua layanan premium</li>
+                        <li>Dukungan teknis</li>
+                        <li>Update regular</li>
+                        <li>Pemakaian 3 bulan</li>
+                    </ul>
+                    <a href="https://sharingan.id/?ref=ABURAME-8FX" class="buy-btn">Beli Sekarang</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>ANBU</h3>
+                    <div class="price">
+                        <span style="text-decoration: line-through; color: #888; font-size: 1.5rem;">Rp 280.000</span>
+                        
+                        <div style="font-size: 2.5rem; font-weight: bold; margin-top: 5px;">Rp 250.000</div>
+                        <span class="duration">6 Bulan</span>
+                    </div>
+                    <ul>
+                        <li>Akses semua layanan premium</li>
+                        <li>Dukungan teknis</li>
+                        <li>Update regular</li>
+                        <li>Pemakaian 6 bulan</li>
+                    </ul>
+                    <a href="https://sharingan.id/?ref=ABURAME-8FX" class="buy-btn">Beli Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Sharingan Extension</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Seperti klan Aburame yang mengendalikan serangga, Sharingan Extension memungkinkan Anda mengendalikan akses ke berbagai layanan premium hanya dalam satu ekstensi browser.</p>
+                    <p>Dengan Sharingan Extension, Anda bisa menghemat biaya langganan bulanan untuk puluhan layanan premium, mulai dari platform AI terbaru, tools produktivitas, hingga layanan streaming hiburan.</p>
+                    <p>Kami terus memperbarui dan menambahkan layanan baru agar Anda selalu mendapatkan pengalaman terbaik. Seperti jutsu klan Aburame yang terus berkembang, Sharingan Extension juga terus bertambah kuat dengan fitur-fitur baru.</p>
+                </div>
+                <div class="about-image">
+                    🐞
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Testimoni Pengguna</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Sharingan Extension seperti jutsu klan Aburame, diam-diam bekerja tapi sangat powerful! Saya bisa akses ChatGPT, Claude, dan AI tools lainnya tanpa perlu berlangganan satu per satu.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SR</div>
+                        <div class="author-info">
+                            <h4>Shino R.</h4>
+                            <p>Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Sebagai content creator, saya butuh banyak tools premium. Sharingan Extension membantu saya menghemat jutaan rupiah tiap bulan dengan akses ke Canva, Capcut, dan platform streaming.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">KA</div>
+                        <div class="author-info">
+                            <h4>Kiba A.</h4>
+                            <p>Content Creator</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Extension ini seperti koloni serangga klan Aburame - efisien dan powerful! Saya bisa akses WSJ, Bloomberg, dan The Economist untuk riset trading saya tanpa perlu berlangganan terpisah.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">TA</div>
+                        <div class="author-info">
+                            <h4>Torune A.</h4>
+                            <p>Trader</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Pertanyaan Umum</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Bagaimana cara menginstall Sharingan Extension?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Setelah melakukan pembelian melalui link kami, Anda akan menerima instruksi lengkap untuk menginstall ekstensi Sharingan di browser Anda. Prosesnya sangat sederhana dan hanya membutuhkan beberapa klik.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Apakah Sharingan Extension aman digunakan?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya, Sharingan Extension 100% aman dan tidak menyimpan data pengguna. Ekstensi ini hanya berfungsi sebagai jembatan untuk mengakses layanan premium tanpa mempengaruhi keamanan browser atau perangkat Anda.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Di browser apa saja Sharingan Extension bisa digunakan?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sharingan Extension kompatibel dengan semua browser berbasis Chromium, termasuk Google Chrome, Microsoft Edge, Brave, dan Opera. Support untuk Firefox juga tersedia.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Apakah bisa digunakan di mobile?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Saat ini, Sharingan Extension hanya tersedia untuk browser desktop. Namun, kami sedang mengembangkan versi mobile yang akan dirilis dalam waktu dekat.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Bagaimana jika ada layanan yang tidak berfungsi?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tim teknis kami secara rutin memeriksa dan memperbarui ekstensi untuk memastikan semua layanan berfungsi dengan baik. Jika Anda mengalami masalah, silakan hubungi dukungan teknis kami dan kami akan menyelesaikannya dengan cepat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back To Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        &#8593;
+    </a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Sharingan.id</h3>
+                    <p>Ekstensi premium untuk akses ratusan layanan dalam satu platform.</p>
+                    <div class="social-links">
+                        <a href="#">📱</a>
+                        <a href="#">📘</a>
+                        <a href="#">📷</a>
+                        <a href="#">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="#features">Fitur</a></li>
+                        <li><a href="#pricing">Paket</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Layanan</h3>
+                    <ul>
+                        <li><a href="#">AI Tools</a></li>
+                        <li><a href="#">Produktivitas</a></li>
+                        <li><a href="#">Berita Premium</a></li>
+                        <li><a href="#">Entertainment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul>
+                        <li><a href="mailto:info@sharingan.id">info@sharingan.id</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Affiliate</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Sharingan.id - Aburame Clan Affiliate. Semua hak dilindungi.</p>
+                <p>Affiliate ID: ABURAME-8FX</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // FAQ accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+                
+                // Update the plus/minus icon
+                const icon = question.querySelector('span:last-child');
+                icon.textContent = item.classList.contains('active') ? '-' : '+';
+            });
+        });
+        
+        // Generate more background bugs for the Aburame theme
+        const bugsContainer = document.querySelector('.bugs-container');
+        
+        for (let i = 0; i < 20; i++) {
+            const bug = document.createElement('div');
+            bug.classList.add('bug');
+            bug.style.top = `${Math.random() * 100}%`;
+            bug.style.left = `${Math.random() * 100}%`;
+            bug.style.animationDelay = `${Math.random() * 20}s`;
+            bug.style.opacity = `${Math.random() * 0.3}`;
+            bug.style.width = `${Math.random() * 5 + 3}px`;
+            bug.style.height = bug.style.width;
+            
+            bugsContainer.appendChild(bug);
+        }
+        
+        // Back to top button functionality
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        // Smooth scroll to top when button is clicked
+        backToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

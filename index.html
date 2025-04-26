@@ -3,686 +3,655 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sharingan.id - Klan Aburame Premium Extension</title>
+    <title>Sharingan.id | Akses Premium untuk Semua | ABURAME</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #f0f8f1;
-            --secondary-color: #4d7553;
-            --accent-color: #317a39;
-            --text-color: #333333;
-            --bg-dark: #e8f3e9;
-            --bg-light: #f5f9f5;
-            --card-bg: #ffffff;
-            --shadow-color: rgba(0, 0, 0, 0.1);
+            --primary: #3A506B;
+            --secondary: #5BC0BE;
+            --accent: #0B132B;
+            --light: #f9f9f9;
+            --dark: #1C2541;
+            --success: #6FFFE9;
+            --hover: #5BC0BE;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-color);
+            background-color: var(--light);
+            color: var(--dark);
             line-height: 1.6;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         .container {
-            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Header Styles */
         header {
-            background-color: var(--primary-color);
-            padding: 20px 0;
-            position: relative;
-            overflow: hidden;
+            background-color: var(--accent);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        
-        .header-content {
+
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
-            z-index: 2;
+            padding: 15px 20px;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
         }
-        
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--accent-color);
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
         }
-        
-        .logo-symbol {
-            font-size: 2rem;
-            color: var(--accent-color);
+
+        .logo h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            color: var(--success);
         }
-        
-        .nav-links {
+
+        .logo span {
+            color: white;
+            font-weight: 300;
+        }
+
+        nav ul {
             display: flex;
-            gap: 20px;
+            list-style: none;
         }
-        
-        .nav-links a {
-            color: var(--text-color);
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
-        
-        .nav-links a:hover {
-            color: var(--accent-color);
+
+        nav a:hover {
+            color: var(--success);
         }
-        
-        .mobile-menu-btn {
+
+        .burger {
             display: none;
+            cursor: pointer;
             background: none;
             border: none;
-            color: var(--text-color);
+            color: white;
             font-size: 1.5rem;
-            cursor: pointer;
         }
-        
+
         /* Hero Section */
         .hero {
-            background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/svgs/solid/spider.svg');
-            background-size: 200px;
-            background-repeat: repeat;
-            background-position: center;
-            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 130px 0 80px;
             text-align: center;
             position: relative;
+            overflow: hidden;
         }
-        
+
         .hero::before {
-            content: '';
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(232, 243, 233, 0.7);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="40" height="40"><circle cx="50" cy="50" r="10" fill="rgba(95, 192, 190, 0.1)"/></svg>');
+            opacity: 0.5;
         }
-        
+
         .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 1;
         }
-        
-        .hero h1 {
-            font-size: 3rem;
+
+        .hero h2 {
+            font-size: 2.5rem;
             margin-bottom: 20px;
-            color: var(--accent-color);
-            text-shadow: 0 2px 4px var(--shadow-color);
-            font-weight: 800;
         }
-        
+
         .hero p {
             font-size: 1.2rem;
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto 30px;
-            color: #444;
         }
-        
-        .cta-btn {
+
+        .btn {
             display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
+            background-color: var(--secondary);
+            color: var(--accent);
             padding: 12px 30px;
-            border-radius: 50px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            box-shadow: 0 4px 6px var(--shadow-color);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
-        
-        .cta-btn:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px var(--shadow-color);
+
+        .btn:hover {
+            background-color: var(--success);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
-        
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: var(--accent);
+        }
+
         /* Features Section */
         .features {
             padding: 80px 0;
-            background-color: var(--bg-light);
+            background-color: white;
         }
-        
+
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 60px;
-            color: var(--accent-color);
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 15px;
             position: relative;
+            display: inline-block;
         }
-        
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: var(--secondary-color);
-            margin: 15px auto 0;
+
+        .section-title h2::after {
+            content: "";
+            width: 70%;
+            height: 3px;
+            background-color: var(--secondary);
+            position: absolute;
+            bottom: -8px;
+            left: 15%;
         }
-        
+
         .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 30px;
+            justify-content: center;
         }
-        
+
         .feature-category {
-            background-color: var(--card-bg);
+            background-color: white;
             border-radius: 10px;
             padding: 30px;
-            box-shadow: 0 5px 15px var(--shadow-color);
-            transition: transform 0.3s;
+            flex: 1 1 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
-        
+
         .feature-category:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
         }
-        
+
         .feature-category h3 {
-            font-size: 1.5rem;
+            color: var(--primary);
             margin-bottom: 20px;
-            color: var(--accent-color);
-            text-align: center;
+            display: flex;
+            align-items: center;
         }
-        
+
+        .feature-category i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
         .feature-list {
-            list-style-type: none;
+            list-style: none;
+            margin-top: 15px;
+            column-count: 2;
+            column-gap: 15px;
         }
-        
+
         .feature-list li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             padding-left: 25px;
             position: relative;
+            break-inside: avoid;
         }
-        
+
         .feature-list li::before {
-            content: '🐞'; /* Bug emoji for Aburame clan theme */
+            content: "•";
+            color: var(--secondary);
             position: absolute;
             left: 0;
-            color: var(--accent-color);
+            top: 0;
+            font-size: 1.2rem;
         }
         
+        /* Responsive feature list */
+        @media (max-width: 480px) {
+            .feature-list {
+                column-count: 1;
+            }
+        }
+        
+        @media (min-width: 768px) and (max-width: 991px) {
+            .feature-category {
+                flex: 1 1 45%;
+            }
+        }
+
         /* Pricing Section */
         .pricing {
             padding: 80px 0;
-            background-color: var(--bg-dark);
+            background-color: var(--light);
         }
-        
+
         .pricing-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 30px;
-            margin-top: 50px;
+            justify-content: center;
         }
-        
+
         .pricing-card {
-            background-color: var(--card-bg);
+            background-color: white;
             border-radius: 10px;
-            padding: 40px 30px;
+            padding: 30px;
+            flex: 1 1 250px;
+            max-width: 350px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             text-align: center;
-            box-shadow: 0 5px 15px var(--shadow-color);
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
-        
+
         .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px var(--shadow-color);
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
-        
-        .pricing-card::before {
-            content: '';
+
+        .pricing-card.popular {
+            border: 2px solid var(--secondary);
+        }
+
+        .popular-badge {
             position: absolute;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background-color: var(--secondary-color);
+            right: 0;
+            background-color: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            border-bottom-left-radius: 10px;
         }
-        
+
         .pricing-card h3 {
-            font-size: 1.8rem;
+            color: var(--primary);
             margin-bottom: 15px;
-            color: var(--accent-color);
+            font-size: 1.5rem;
         }
-        
+
+        .pricing-card .duration {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
         .pricing-card .price {
             font-size: 2.5rem;
             font-weight: bold;
-            margin-bottom: 30px;
+            color: var(--dark);
+            margin-bottom: 5px;
         }
-        
-        .pricing-card .duration {
-            display: block;
-            font-size: 1rem;
-            color: #999;
-            margin-top: 5px;
+
+        .pricing-card .original-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
         }
-        
+
         .pricing-card ul {
-            list-style-type: none;
-            margin-bottom: 30px;
             text-align: left;
+            margin: 25px 0;
+            list-style: none;
         }
-        
+
         .pricing-card ul li {
             margin-bottom: 10px;
             padding-left: 25px;
             position: relative;
         }
-        
+
         .pricing-card ul li::before {
-            content: '✓';
+            content: "✓";
             position: absolute;
             left: 0;
-            color: var(--accent-color);
+            color: var(--secondary);
         }
-        
-        .pricing-card .buy-btn {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 10px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-        
-        .pricing-card .buy-btn:hover {
-            background-color: var(--accent-color);
-        }
-        
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background-color: var(--bg-light);
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .about-text {
-            font-size: 1.1rem;
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-        }
-        
-        .about-image {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px var(--shadow-color);
-            height: 400px;
-            background-color: var(--card-bg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 8rem;
-            color: var(--accent-color);
-        }
-        
-        /* Testimonials Section */
-        .testimonials {
-            padding: 80px 0;
-            background-color: var(--bg-dark);
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px var(--shadow-color);
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
-        .testimonial-text::before {
-            content: '"';
-            font-size: 4rem;
-            position: absolute;
-            top: -30px;
-            left: -10px;
-            color: var(--secondary-color);
-            opacity: 0.5;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: var(--secondary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-        
-        .author-info h4 {
-            font-size: 1.1rem;
-            margin-bottom: 3px;
-        }
-        
-        .author-info p {
-            color: #999;
-            font-size: 0.9rem;
-        }
-        
+
         /* FAQ Section */
         .faq {
             padding: 80px 0;
-            background-color: var(--bg-light);
+            background-color: white;
         }
-        
-        .faq-list {
+
+        .faq-container {
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .faq-item {
             margin-bottom: 20px;
             border-radius: 10px;
             overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         .faq-question {
-            background-color: var(--card-bg);
+            background-color: var(--light);
             padding: 20px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: bold;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease;
         }
-        
+
         .faq-question:hover {
-            background-color: var(--secondary-color);
+            background-color: #f0f0f0;
         }
-        
+
+        .faq-question h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        .faq-question i {
+            color: var(--secondary);
+            transition: transform 0.3s ease;
+        }
+
         .faq-answer {
-            background-color: var(--card-bg);
+            background-color: white;
             padding: 0 20px;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s, padding 0.3s;
+            transition: max-height 0.3s ease, padding 0.3s ease;
         }
-        
+
+        .faq-item.active .faq-question {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .faq-item.active .faq-question h3 {
+            color: white;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+            color: var(--success);
+        }
+
         .faq-item.active .faq-answer {
-            max-height: 500px;
+            max-height: 300px;
             padding: 20px;
         }
-        
+
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+
         /* Footer */
         footer {
-            background-color: var(--accent-color);
-            padding: 60px 0 30px;
+            background-color: var(--accent);
             color: white;
+            padding: 40px 0;
         }
-        
+
         .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
-        
-        .footer-column h3 {
-            font-size: 1.3rem;
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
             margin-bottom: 20px;
-            color: white;
-            font-weight: bold;
         }
-        
+
+        .footer-column h3 {
+            color: var(--success);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
         .footer-column ul {
-            list-style-type: none;
+            list-style: none;
         }
-        
-        .footer-column ul li {
+
+        .footer-column li {
             margin-bottom: 10px;
         }
-        
-        .footer-column ul li a {
-            color: white;
+
+        .footer-column a {
+            color: #ddd;
             text-decoration: none;
             transition: color 0.3s;
         }
-        
-        .footer-column ul li a:hover {
-            color: #e0e0e0;
-            text-decoration: underline;
+
+        .footer-column a:hover {
+            color: var(--success);
         }
-        
+
         .social-links {
             display: flex;
             gap: 15px;
         }
-        
+
         .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: var(--bg-light);
-            border-radius: 50%;
-            color: var(--text-color);
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 1.2rem;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--secondary-color);
+            display: inline-block;
             color: white;
-            transform: translateY(-3px);
-        }
-        
-        .footer-bottom {
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #333;
-            color: #999;
-        }
-        
-        /* Back To Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background-color: var(--accent-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 24px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
+            line-height: 36px;
             transition: all 0.3s ease;
         }
-        
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
         }
-        
-        .back-to-top:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
         }
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-            
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-                position: absolute;
-                top: 20px;
-                right: 20px;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-image {
-                height: 300px;
-                order: -1;
-            }
-        
-        
-        /* Aburame Clan Theme Elements */
-        .bugs-container {
-            position: fixed;
-            top: 0;
-            left: 0;
+
+        /* Aburame Theme Elements */
+        .aburame-glasses {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background-color: var(--dark);
+            border-radius: 50%;
+            margin-right: 5px;
+            position: relative;
+            border: 2px solid var(--secondary);
+        }
+
+        .aburame-insect {
+            position: absolute;
             width: 100%;
             height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.3s;
         }
-        
-        .bug {
+
+        .feature-category:hover .aburame-insect {
+            opacity: 0.7;
+        }
+
+        .aburame-pattern {
             position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: var(--accent-color);
-            border-radius: 50%;
-            opacity: 0.5;
-            animation: flyAround 30s linear infinite;
-            box-shadow: 0 0 5px rgba(49, 122, 57, 0.3);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="2" fill="rgba(95, 192, 190, 0.2)"/></svg>');
+            opacity: 0.2;
+            pointer-events: none;
         }
-        
-        @keyframes flyAround {
-            0% {
-                transform: translate(0, 0);
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .burger {
+                display: none; /* Tidak menampilkan tombol burger */
             }
-            25% {
-                transform: translate(100px, 50px);
+            
+            .header-container {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
             }
-            50% {
-                transform: translate(50px, 100px);
+            
+            .logo {
+                margin-bottom: 10px;
             }
-            75% {
-                transform: translate(-50px, 50px);
+
+            nav ul {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                padding: 5px 0;
             }
-            100% {
-                transform: translate(0, 0);
+
+            nav li {
+                margin: 5px;
+            }
+            
+            nav a {
+                font-size: 0.9rem;
+                padding: 5px 8px;
+            }
+
+            .hero {
+                padding: 140px 0 60px;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .footer-column {
+                margin-bottom: 30px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Background Bugs Animation (Aburame Theme) -->
-    <div class="bugs-container">
-        <div class="bug" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
-        <div class="bug" style="top: 30%; left: 50%; animation-delay: 2s;"></div>
-        <div class="bug" style="top: 70%; left: 80%; animation-delay: 4s;"></div>
-        <div class="bug" style="top: 90%; left: 10%; animation-delay: 6s;"></div>
-        <div class="bug" style="top: 40%; left: 30%; animation-delay: 8s;"></div>
-        <div class="bug" style="top: 60%; left: 60%; animation-delay: 10s;"></div>
-    </div>
-
-    <!-- Header -->
     <header>
-        <div class="container header-content">
+        <div class="header-container">
             <div class="logo">
-                <span class="logo-symbol">🐞</span>
-                <div class="logo-text" style="color: var(--accent-color);">Sharingan.id</div>
+                <div class="aburame-glasses"></div>
+                <h1>ABURAME<span>-8FX</span></h1>
             </div>
-            <button class="mobile-menu-btn" style="color: var(--accent-color);">☰</button>
-            <nav class="nav-links">
-                <a href="#features" style="color: var(--accent-color);">Fitur</a>
-                <a href="#pricing" style="color: var(--accent-color);">Paket</a>
-                <a href="#about" style="color: var(--accent-color);">Tentang</a>
-                <a href="#faq" style="color: var(--accent-color);">FAQ</a>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#features">Fitur</a></li>
+                    <li><a href="#pricing">Harga</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
+        <div class="aburame-pattern"></div>
         <div class="container hero-content">
-            <h1>ABURAME CLAN EXTENSION</h1>
-            <p>Seperti jutsu serangga Klan Aburame, Sharingan Extension mengumpulkan dan memberikan akses ke ratusan layanan premium dalam satu ekstensi browser. Kendalikan dunia digital dengan kekuatan Sharingan.</p>
-            <a href="https://sharingan.id/?ref=ABURAME-8FX" class="cta-btn">DAPATKAN SEKARANG</a>
+            <h2>Akses Premium Tanpa Batas</h2>
+            <p>Nikmati akses ke berbagai layanan premium populer seperti ChatGPT, Canva, YouTube, dan banyak lagi dengan ekstensi browser dari Sharingan.id menggunakan kode affiliate ABURAME-8FX.</p>
+            <a href="https://sharingan.id/?ref=ABURAME-8FX" class="btn">Dapatkan Sekarang</a>
+            <a href="#features" class="btn btn-outline">Pelajari Lebih Lanjut</a>
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
-            <h2 class="section-title">Fitur Premium</h2>
+            <div class="section-title">
+                <h2>Kategori Premium</h2>
+                <p>Akses berbagai layanan premium hanya dengan satu ekstensi</p>
+            </div>
             <div class="features-grid">
                 <div class="feature-category">
-                    <h3>AI Tools</h3>
+                    <h3><i class="fas fa-robot"></i> AI</h3>
+                    <p>Akses layanan AI premium tanpa batasan:</p>
                     <ul class="feature-list">
                         <li>ChatGPT</li>
                         <li>Sora AI</li>
@@ -692,27 +661,29 @@
                         <li>Kimi AI</li>
                         <li>T3 AI</li>
                         <li>YouCom AI</li>
+                        <li>Mapify</li>
+                        <li>Quilbot</li>
+                        <li>Gamma</li>
                         <li>DeepSeek</li>
                         <li>Qwen AI</li>
                     </ul>
+                    <div class="aburame-insect"></div>
                 </div>
                 <div class="feature-category">
-                    <h3>Media & Berita</h3>
+                    <h3><i class="fas fa-newspaper"></i> News</h3>
+                    <p>Baca berita premium dari sumber terpercaya:</p>
                     <ul class="feature-list">
                         <li>Bloomberg</li>
                         <li>Investing.com Pro</li>
                         <li>NY Times</li>
                         <li>The Economist</li>
                         <li>Wall Street Journal</li>
-                        <li>Apple TV</li>
-                        <li>Apple Music</li>
-                        <li>Youtube Premium</li>
-                        <li>Disney+ Hotstar</li>
-                        <li>HBO Max</li>
                     </ul>
+                    <div class="aburame-insect"></div>
                 </div>
                 <div class="feature-category">
-                    <h3>Produktivitas</h3>
+                    <h3><i class="fas fa-laptop-code"></i> Produktivitas</h3>
+                    <p>Tingkatkan produktivitas dengan alat premium:</p>
                     <ul class="feature-list">
                         <li>Canva</li>
                         <li>TurnitIn</li>
@@ -724,243 +695,227 @@
                         <li>DeepL</li>
                         <li>TradingView</li>
                         <li>Medium</li>
+                        <li>PicsArt</li>
+                        <li>AskYourPDF</li>
+                        <li>Slideshare</li>
+                        <li>Everand</li>
+                        <li>FastVPN</li>
+                        <li>Figma</li>
+                        <li>Udemy</li>
                     </ul>
+                    <div class="aburame-insect"></div>
+                </div>
+                <div class="feature-category">
+                    <h3><i class="fas fa-film"></i> Hiburan</h3>
+                    <p>Nikmati layanan streaming premium:</p>
+                    <ul class="feature-list">
+                        <li>Apple TV</li>
+                        <li>Apple Music</li>
+                        <li>Youtube</li>
+                        <li>Disney+ Hotstar</li>
+                        <li>HBO Max</li>
+                        <li>Prime Video</li>
+                        <li>BStation</li>
+                        <li>Viu</li>
+                        <li>WeTv</li>
+                        <li>Crunchyroll</li>
+                        <li>Sushiroll</li>
+                        <li>iQIYI</li>
+                        <li>Bein Sports</li>
+                        <li>Catchplay</li>
+                        <li>Genflix</li>
+                        <li>Lionsgate Play</li>
+                        <li>YOUKU</li>
+                    </ul>
+                    <div class="aburame-insect"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
     <section class="pricing" id="pricing">
         <div class="container">
-            <h2 class="section-title">Paket Klan Aburame</h2>
+            <div class="section-title">
+                <h2>Pilihan Paket</h2>
+                <p>Pilih paket yang sesuai dengan kebutuhan Anda</p>
+            </div>
             <div class="pricing-cards">
-                <div class="pricing-card">
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Terpopuler</div>
                     <h3>Chunin</h3>
-                    <div class="price">
-                        <span style="text-decoration: line-through; color: #888; font-size: 1.5rem; margin-right: 10px;">Rp 60.000</span>
-                        <span style="font-weight: bold; font-style: italic; color: #f44336; display: inline-block; margin-left: 10px;">Best Plan</span>
-                        <div style="font-size: 2.5rem; font-weight: bold; margin-top: 5px;">Rp 45.000</div>
-                        <span class="duration">1 Bulan</span>
-                    </div>
+                    <div class="duration">1 Bulan</div>
+                    <div class="price">Rp 45.000</div>
+                    <div class="original-price">Rp 60.000</div>
                     <ul>
                         <li>Akses semua layanan premium</li>
                         <li>Dukungan teknis</li>
-                        <li>Update regular</li>
-                        <li>Pemakaian 1 bulan</li>
+                        <li>Instalasi mudah</li>
+                        <li>Update otomatis</li>
                     </ul>
-                    <a href="https://sharingan.id/?ref=ABURAME-8FX" class="buy-btn">Beli Sekarang</a>
+                    <a href="https://sharingan.id/?ref=ABURAME-8FX" class="btn">Beli Sekarang</a>
                 </div>
                 <div class="pricing-card">
                     <h3>Jounin</h3>
-                    <div class="price">
-                        <span style="text-decoration: line-through; color: #888; font-size: 1.5rem;">Rp 150.000</span>
-                        <div style="font-size: 2.5rem; font-weight: bold; margin-top: 5px;">Rp 130.000</div>
-                        <span class="duration">3 Bulan</span>
-                    </div>
+                    <div class="duration">3 Bulan</div>
+                    <div class="price">Rp 130.000</div>
+                    <div class="original-price">Rp 150.000</div>
                     <ul>
                         <li>Akses semua layanan premium</li>
-                        <li>Dukungan teknis</li>
-                        <li>Update regular</li>
-                        <li>Pemakaian 3 bulan</li>
+                        <li>Dukungan teknis prioritas</li>
+                        <li>Instalasi mudah</li>
+                        <li>Update otomatis</li>
+                        <li>Hemat Rp 20.000</li>
                     </ul>
-                    <a href="https://sharingan.id/?ref=ABURAME-8FX" class="buy-btn">Beli Sekarang</a>
+                    <a href="https://sharingan.id/?ref=ABURAME-8FX" class="btn">Beli Sekarang</a>
                 </div>
                 <div class="pricing-card">
-                    <h3>ANBU</h3>
-                    <div class="price">
-                        <span style="text-decoration: line-through; color: #888; font-size: 1.5rem;">Rp 280.000</span>
-                        
-                        <div style="font-size: 2.5rem; font-weight: bold; margin-top: 5px;">Rp 250.000</div>
-                        <span class="duration">6 Bulan</span>
-                    </div>
+                    <h3>Anbu</h3>
+                    <div class="duration">6 Bulan</div>
+                    <div class="price">Rp 250.000</div>
+                    <div class="original-price">Rp 270.000</div>
                     <ul>
                         <li>Akses semua layanan premium</li>
-                        <li>Dukungan teknis</li>
-                        <li>Update regular</li>
-                        <li>Pemakaian 6 bulan</li>
+                        <li>Dukungan teknis prioritas</li>
+                        <li>Instalasi mudah</li>
+                        <li>Update otomatis</li>
+                        <li>Hemat Rp 20.000</li>
+                        <li>Harga terbaik per bulan</li>
                     </ul>
-                    <a href="https://sharingan.id/?ref=ABURAME-8FX" class="buy-btn">Beli Sekarang</a>
+                    <a href="https://sharingan.id/?ref=ABURAME-8FX" class="btn">Beli Sekarang</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">Tentang Sharingan Extension</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Seperti klan Aburame yang mengendalikan serangga, Sharingan Extension memungkinkan Anda mengendalikan akses ke berbagai layanan premium hanya dalam satu ekstensi browser.</p>
-                    <p>Dengan Sharingan Extension, Anda bisa menghemat biaya langganan bulanan untuk puluhan layanan premium, mulai dari platform AI terbaru, tools produktivitas, hingga layanan streaming hiburan.</p>
-                    <p>Kami terus memperbarui dan menambahkan layanan baru agar Anda selalu mendapatkan pengalaman terbaik. Seperti jutsu klan Aburame yang terus berkembang, Sharingan Extension juga terus bertambah kuat dengan fitur-fitur baru.</p>
-                </div>
-                <div class="about-image">
-                    🐞
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">Testimoni Pengguna</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        Sharingan Extension seperti jutsu klan Aburame, diam-diam bekerja tapi sangat powerful! Saya bisa akses ChatGPT, Claude, dan AI tools lainnya tanpa perlu berlangganan satu per satu.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SR</div>
-                        <div class="author-info">
-                            <h4>Shino R.</h4>
-                            <p>Developer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        Sebagai content creator, saya butuh banyak tools premium. Sharingan Extension membantu saya menghemat jutaan rupiah tiap bulan dengan akses ke Canva, Capcut, dan platform streaming.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">KA</div>
-                        <div class="author-info">
-                            <h4>Kiba A.</h4>
-                            <p>Content Creator</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        Extension ini seperti koloni serangga klan Aburame - efisien dan powerful! Saya bisa akses WSJ, Bloomberg, dan The Economist untuk riset trading saya tanpa perlu berlangganan terpisah.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">TA</div>
-                        <div class="author-info">
-                            <h4>Torune A.</h4>
-                            <p>Trader</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
     <section class="faq" id="faq">
         <div class="container">
-            <h2 class="section-title">Pertanyaan Umum</h2>
-            <div class="faq-list">
+            <div class="section-title">
+                <h2>Pertanyaan Umum</h2>
+                <p>Jawaban untuk pertanyaan yang sering diajukan</p>
+            </div>
+            <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Bagaimana cara menginstall Sharingan Extension?</span>
-                        <span>+</span>
+                        <h3>Apa itu Sharingan.id?</h3>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Setelah melakukan pembelian melalui link kami, Anda akan menerima instruksi lengkap untuk menginstall ekstensi Sharingan di browser Anda. Prosesnya sangat sederhana dan hanya membutuhkan beberapa klik.</p>
+                        <p>Sharingan.id adalah layanan ekstensi browser yang menyediakan akses ke berbagai layanan premium populer seperti ChatGPT, Canva, YouTube Premium, dan banyak lagi tanpa perlu berlangganan satu per satu.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Apakah Sharingan Extension aman digunakan?</span>
-                        <span>+</span>
+                        <h3>Bagaimana cara menggunakan ekstensi ini?</h3>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Ya, Sharingan Extension 100% aman dan tidak menyimpan data pengguna. Ekstensi ini hanya berfungsi sebagai jembatan untuk mengakses layanan premium tanpa mempengaruhi keamanan browser atau perangkat Anda.</p>
+                        <p>Cukup beli paket, lalu instal ekstensi di browser Anda. Setelah login, Anda bisa langsung mengakses semua layanan premium yang tersedia tanpa batasan.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Di browser apa saja Sharingan Extension bisa digunakan?</span>
-                        <span>+</span>
+                        <h3>Apakah ekstensi ini aman?</h3>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Sharingan Extension kompatibel dengan semua browser berbasis Chromium, termasuk Google Chrome, Microsoft Edge, Brave, dan Opera. Support untuk Firefox juga tersedia.</p>
+                        <p>Ya, ekstensi ini aman digunakan dan tidak mengumpulkan data personal Anda. Ekstensi ini hanya berfungsi untuk membuka akses premium pada layanan yang didukung.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Apakah bisa digunakan di mobile?</span>
-                        <span>+</span>
+                        <h3>Browser apa saja yang didukung?</h3>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Saat ini, Sharingan Extension hanya tersedia untuk browser desktop. Namun, kami sedang mengembangkan versi mobile yang akan dirilis dalam waktu dekat.</p>
+                        <p>Ekstensi ini mendukung browser populer seperti Google Chrome, Microsoft Edge, Firefox, dan browser berbasis Chromium lainnya.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Bagaimana jika ada layanan yang tidak berfungsi?</span>
-                        <span>+</span>
+                        <h3>Apakah saya bisa menggunakan di perangkat mobile?</h3>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Tim teknis kami secara rutin memeriksa dan memperbarui ekstensi untuk memastikan semua layanan berfungsi dengan baik. Jika Anda mengalami masalah, silakan hubungi dukungan teknis kami dan kami akan menyelesaikannya dengan cepat.</p>
+                        <p>Ya, Anda bisa menggunakan ekstensi ini di browser mobile yang mendukung ekstensi seperti Kiwi Browser atau Yandex Browser di Android.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Back To Top Button -->
-    <a href="#" class="back-to-top" id="backToTop">
-        &#8593;
-    </a>
+    <section class="cta">
+        <div class="container">
+            <h2>Mulai Akses Premium Sekarang</h2>
+            <p>Jangan lewatkan kesempatan untuk mengakses puluhan layanan premium dengan harga terjangkau. Gunakan kode affiliate ABURAME-8FX untuk mendapatkan penawaran terbaik!</p>
+            <a href="https://sharingan.id/?ref=ABURAME-8FX" class="btn">Dapatkan Sekarang</a>
+        </div>
+    </section>
+
+    <footer id="contact">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Sharingan.id</h3>
-                    <p>Ekstensi premium untuk akses ratusan layanan dalam satu platform.</p>
+                    <h3>Tentang Kami</h3>
+                    <p>Kami menyediakan akses ke layanan premium melalui ekstensi browser dengan harga terjangkau. Gunakan kode affiliate ABURAME-8FX untuk mendapatkan penawaran terbaik.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Kategori</h3>
+                    <ul>
+                        <li><a href="#features">AI</a></li>
+                        <li><a href="#features">News</a></li>
+                        <li><a href="#features">Produktivitas</a></li>
+                        <li><a href="#features">Hiburan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Tautan</h3>
+                    <ul>
+                        <li><a href="#pricing">Harga</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="https://sharingan.id/?ref=ABURAME-8FX">Situs Resmi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Hubungi Kami</h3>
+                    <p>Email: aburame8fx@example.com</p>
                     <div class="social-links">
-                        <a href="#">📱</a>
-                        <a href="#">📘</a>
-                        <a href="#">📷</a>
-                        <a href="#">🐦</a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
-                <div class="footer-column">
-                    <h3>Links</h3>
-                    <ul>
-                        <li><a href="#features">Fitur</a></li>
-                        <li><a href="#pricing">Paket</a></li>
-                        <li><a href="#about">Tentang</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Layanan</h3>
-                    <ul>
-                        <li><a href="#">AI Tools</a></li>
-                        <li><a href="#">Produktivitas</a></li>
-                        <li><a href="#">Berita Premium</a></li>
-                        <li><a href="#">Entertainment</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Kontak</h3>
-                    <ul>
-                        <li><a href="mailto:info@sharingan.id">info@sharingan.id</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Affiliate</a></li>
-                    </ul>
-                </div>
             </div>
-            <div class="footer-bottom">
-                <p>© 2025 Sharingan.id - Aburame Clan Affiliate. Semua hak dilindungi.</p>
-                <p>Affiliate ID: ABURAME-8FX</p>
+            <div class="copyright">
+                <p>&copy; 2025 ABURAME-8FX. Affiliate Resmi Sharingan.id. Kode Affiliate: ABURAME-8FX</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        // Navigation for all screen sizes
+        const navMenu = document.getElementById('nav-menu');
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // No need to close mobile menu anymore
+                }
+            });
         });
-        
+
         // FAQ accordion
         const faqItems = document.querySelectorAll('.faq-item');
         
@@ -968,50 +923,58 @@
             const question = item.querySelector('.faq-question');
             
             question.addEventListener('click', () => {
-                item.classList.toggle('active');
+                // Close all other FAQ items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
                 
-                // Update the plus/minus icon
-                const icon = question.querySelector('span:last-child');
-                icon.textContent = item.classList.contains('active') ? '-' : '+';
+                // Toggle current FAQ item
+                item.classList.toggle('active');
             });
         });
+
+        // Aburame theme effects - beetle movement animation
+        const featureCategories = document.querySelectorAll('.feature-category');
         
-        // Generate more background bugs for the Aburame theme
-        const bugsContainer = document.querySelector('.bugs-container');
-        
-        for (let i = 0; i < 20; i++) {
-            const bug = document.createElement('div');
-            bug.classList.add('bug');
-            bug.style.top = `${Math.random() * 100}%`;
-            bug.style.left = `${Math.random() * 100}%`;
-            bug.style.animationDelay = `${Math.random() * 20}s`;
-            bug.style.opacity = `${Math.random() * 0.3}`;
-            bug.style.width = `${Math.random() * 5 + 3}px`;
-            bug.style.height = bug.style.width;
+        featureCategories.forEach(category => {
+            const insect = category.querySelector('.aburame-insect');
             
-            bugsContainer.appendChild(bug);
-        }
-        
-        // Back to top button functionality
-        const backToTopBtn = document.getElementById('backToTop');
-        
-        // Show/hide button based on scroll position
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.add('visible');
-            } else {
-                backToTopBtn.classList.remove('visible');
+            if (insect) {
+                // Create SVG beetle
+                insect.innerHTML = `
+                    <svg viewBox="0 0 24 24" width="100%" height="100%">
+                        <circle cx="12" cy="12" r="5" fill="rgba(11, 19, 43, 0.7)" />
+                        <circle cx="10" cy="10" r="1" fill="${getComputedStyle(document.documentElement).getPropertyValue('--secondary')}" />
+                        <circle cx="14" cy="10" r="1" fill="${getComputedStyle(document.documentElement).getPropertyValue('--secondary')}" />
+                        <path d="M9 15 Q12 18 15 15" stroke="${getComputedStyle(document.documentElement).getPropertyValue('--secondary')}" fill="none" />
+                        <line x1="7" y1="7" x2="4" y2="4" stroke="${getComputedStyle(document.documentElement).getPropertyValue('--secondary')}" />
+                        <line x1="17" y1="7" x2="20" y2="4" stroke="${getComputedStyle(document.documentElement).getPropertyValue('--secondary')}" />
+                        <line x1="6" y1="10" x2="2" y2="9" stroke="${getComputedStyle(document.documentElement).getPropertyValue('--secondary')}" />
+                        <line x1="18" y1="10" x2="22" y2="9" stroke="${getComputedStyle(document.documentElement).getPropertyValue('--secondary')}" />
+                    </svg>
+                `;
+                
+                // No more cursor movement on hover
+                category.addEventListener('mousemove', (e) => {
+                    // Hapus semua animasi kursor
+                });
             }
         });
+
+        // Add Aburame glasses animation
+        const aburameGlasses = document.querySelector('.aburame-glasses');
         
-        // Smooth scroll to top when button is clicked
-        backToTopBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        if (aburameGlasses) {
+            aburameGlasses.addEventListener('mouseover', () => {
+                aburameGlasses.style.boxShadow = `0 0 10px ${getComputedStyle(document.documentElement).getPropertyValue('--success')}`;
             });
-        });
+            
+            aburameGlasses.addEventListener('mouseout', () => {
+                aburameGlasses.style.boxShadow = 'none';
+            });
+        }
     </script>
 </body>
 </html>
